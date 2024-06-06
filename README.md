@@ -89,7 +89,7 @@ m.kuku.luはクッキーの "csrf_token" と "sessionhash" の値で1つのア�
 https://m.kuku.lu/index.php?action=checkNewMailUser&ip=```IPv6```&nopost=1&csrf_token_check=```csrf_token```&csrf_subtoken_check=```csrf_subtoken```&newdomain=```ドメイン```&newuser=&_=```newuser```  
 にリクエストする必要がある  
 ただここは自動化するより実際にサイトを見て選んだ方が100倍いい ( なにが新しいドメインかがわかったりする ) ので選んで1つ作ったアカウントのクッキーを保存したらOK  
-そもそもアドレス指定が必要なのは作るのは捨てメアド判定が導入されているサービスのみ  
+そもそもアドレス指定が必要なのは捨てメアド判定が導入されているサービスくらい  
 ## 余談
 捨てメアド作成の自動化においてはm.kuku.luより良いサービス ( APIが使いやすいという意味で ) はいろいろある ( 1secmailやdevelopermailなど )  
 どうしてもm.kuku.luが良かったり、捨てメアド判定を回避したい時にこのコードが役に立つでしょう....
