@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
+class KukuluError(Exception):
+    pass
 class Kukulu():
     def __init__(self,csrf_token:str=None,sessionhash:str=None,proxy:dict=None):
         self.csrf_token=csrf_token
@@ -30,7 +32,10 @@ class Kukulu():
         soup=BeautifulSoup(mails.text,"html.parser")
         script=soup.find_all("script")
         match = re.search("(openMailData[^ ]+)", str(script))
-        openMailData=match.group()
+        try:
+            openMailData=match.group()
+        except:
+            raise KukuluError("受信メールはありません")
         openMailData=openMailData.replace("openMailData(","")
         match2=re.findall(f"{openMailData} [^ ]+", str(script))
         maildata=match2[1].split("'")
