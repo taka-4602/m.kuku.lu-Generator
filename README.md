@@ -26,6 +26,8 @@ class Kukulu():
             self.session.post("https://m.kuku.lu",proxies=proxy)
         else:
             self.session.post("https://m.kuku.lu",proxies=proxy)
+            self.csrf_token=self.session.cookies["cookie_csrf_token"]
+            self.sessionhash=self.session.cookies["cookie_sessionhash"]
     
     def new_account(self):
         return {"csrf_token":self.session.cookies["cookie_csrf_token"],"sessionhash":self.session.cookies["cookie_sessionhash"]}
